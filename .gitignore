@@ -1,0 +1,11 @@
+# Project exclude paths
+/venv/
+/*.xlsx
+/results_profiles.xlsx
+/~$results_profiles.xlsx
+/config.ini
+.idea
+/ScrapedData/
+/errlog.txt
+/Input/profiles_data_full.txt
+!results_profiles_sample.xlsx
