@@ -39,14 +39,16 @@ class ProfileScraper(Thread):
 
         self.results = []
 
-        # Linux-specific code needed to open a new window of Chrome
-        if config.get('system', 'os') == 'linux':
-            self.display = Display(visible=0, size=(800, 800))
-            self.display.start()
+        options = Options()
+        options.add_experimental_option(
+                                "excludeSwitches", ["enable-automation"])
+        options.add_experimental_option('useAutomationExtension', False)
+        options.headless = headless_option
 
         # Creation of a new instance of Chrome
-        self.browser = webdriver.Chrome(executable_path=config.get('system', 'driver'),
-                                        options=get_browser_options(headless_option, config))
+        self.browser = webdriver.Chrome(executable_path=config.get(
+                                                           'system', 'driver'),
+                                        chrome_options=options)
 
         self.industries_dict = {}
 

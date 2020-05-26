@@ -68,7 +68,7 @@ a possible for those who have have never coded before, don't be alarmed these ac
         pip install -r requirement.txt
         ```
     3. This will install all the packages required for the scraper to run, give it a few minutes
-    ![](GIFs/pip-install.gif)
+    ![](GIFs/pipinstall.gif)
  4. Finally configure the Web Scraper to the correct files and accounts:
     ```
         python configurator.py
@@ -82,7 +82,7 @@ a possible for those who have have never coded before, don't be alarmed these ac
     python scrape.py 
     ```
     - if all is successful it should fire up a chrome browser and scrape the profiles in the input file
-    ![](GIFs/pip-install.gif)
+    ![](GIFs/scrape.gif)
 
 ## Executing
 
