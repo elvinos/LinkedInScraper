@@ -85,8 +85,8 @@ class ProfileScraper(Thread):
         try:
             # Setting of the delay (seconds) between operations that need to be sure loading of page is ended
             if rand:
-                loading_pause_time = np.random.randint(2, 5)
-                loading_scroll_time = np.random.randint(1, 5)
+                loading_pause_time = np.random.randint(1, 3)
+                loading_scroll_time = np.random.randint(1, 2)
             else:
                 loading_pause_time = 2
                 loading_scroll_time = 1
@@ -389,7 +389,7 @@ class ProfileScraper(Thread):
         count = 0
 
         for entry in self.entries:
-            time.sleep(np.random.randint(0, 5))
+            # time.sleep(np.random.randint(0, 3))
 
             count += 1
 
