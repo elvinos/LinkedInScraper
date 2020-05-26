@@ -21,6 +21,7 @@ Along with these different parameters, emails and skills have also been soft-cod
 You must have installed in your machine (higher versions are fine):
 * Python 3.7 - virtual env
    * For windows users this can be installed through using the anaconda application on the software centre
+* A text editor, not necessary but useful for modifying input files  - recommend (Atom)[https://atom.io]
 
 
 ## Installing
@@ -35,31 +36,50 @@ a possible for those who have have never coded before, don't be alarmed these ac
     3. When installed fire up an application called: Anaconda Powershell Prompt (this is a terminal for working with python), on windows this can be found by pressing the Windows Key and searching
     4. Python is now installed
 2. In order to keep everything tidy a virtual python environment is needed:
-    1. In the Powershell prompt type `conda create --name Web-Scraping python=3.7`
+    1. In the Powershell prompt type:
+         ```
+            conda create --name Web-Scraping python=3.7
+         ```
         - N.B. the name can be replaced with anything you want
         - Wait a few moments and this will run a few commands to create the python environment, when a new line appears you know the process is complete
     2. To see what environments are available type `conda env list` remember this in case you forget the environment name
     3. If the new environment `Web-Scraping` is listed you are good to go. Lets now activate this so you can use it: windows: `conda activate Web-Scraping`, mac: `conda source activate Web-Scraping`
         - on Powershell the name in brackets on the LHS should change from anaconda3 -> Web-Scraping letting you know which python environment is running
 3. Lets now download the scraper:
- 1. First choose a folder to place this code into - I use `Documents\Development\Python\`
- 2. To access a directory use the `cd` command i.e. `cd  Documents\Development\Python\` 
+ 1. First choose a folder to place this code into - I use `Users\Alex.Charles\Documents\Development\`
+ 2. To access a directory use the `cd` command i.e. `cd  Users\Alex.Charles\Documents\Development\` 
     - Top tips:
         - `ls` to see all files in the directory
         - `cd ..` to go up one directory level
         - `cd ` then tab autocomplete and scroll through folders (type and keep hitting tab until you get to the correct one)
- 3. Now we are going to download / clone the linkedIn scraper to you local machine:
-    1.
-Place the directory `LinkedinScraping` in your python environment
-3. From inside the directory `LinkedinScraping` run the following:
-``` 
-pip install -r requirements.txt
-```
- 4. Run `LinkedinScraping\configurator.py` following the prompted instructions.
- 
-
-If it's the first time, set the configuration as suggested by the messages that will be printed by the configurator.
-In any time in the future you can easily re-run the configuration to change for example name of input / output files or delimiters.
+ 3. Now we are going to download / clone the LinkedIn scraper to you local machine:
+    1. In the directory of choice type: 
+        ```
+            git clone https://github.com/elvinos/LinkedInScraper.git
+        ```
+    2. That's it - if you aren't feeling brave you can also do this manually clinking the clone button on the github page
+ 4. Install package requirements:
+    1. Change to the new LinkedInScraper directory:
+    `cd LinkedInScraper`
+    2. Make sure that Web-Scraper is still the python environment you are working in then install the packages with:
+        ```
+        pip install -r requirement.txt
+        ```
+    3. This will install all the packages required for the scraper to run, give it a few minutes
+      
+ 4. Finally configure the Web Scraper to the correct files and accounts:
+    ```
+        python configurator.py
+    ```
+    -  Follow the prompted instructions filling out thew input and output files - it is fine to change these later
+    - LinkedIn login details are kept safe on you local machine, so don'worry about security here... you can change these if you are rotating profiles
+    - *If it's the first time, set the configuration as suggested by the messages that will be printed by the configurator*
+    - *Any time in the future you can easily re-run the configuration to change for example name of input / output files*
+ 5. Take a test run:
+    ```
+    python scrape.py 
+    ```
+    - if all is successful it should fire up a chrome browser and scrape the profiles in the input file
 
 
 ## Executing
