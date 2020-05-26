@@ -45,6 +45,7 @@ a possible for those who have have never coded before, don't be alarmed these ac
     2. To see what environments are available type `conda env list` remember this in case you forget the environment name
     3. If the new environment `Web-Scraping` is listed you are good to go. Lets now activate this so you can use it: windows: `conda activate Web-Scraping`, mac: `conda source activate Web-Scraping`
         - on Powershell the name in brackets on the LHS should change from anaconda3 -> Web-Scraping letting you know which python environment is running
+    ![](GIFs/install.gif)
 3. Lets now download the scraper:
  1. First choose a folder to place this code into - I use `Users\Alex.Charles\Documents\Development\`
  2. To access a directory use the `cd` command i.e. `cd  Users\Alex.Charles\Documents\Development\` 
@@ -58,6 +59,7 @@ a possible for those who have have never coded before, don't be alarmed these ac
             git clone https://github.com/elvinos/LinkedInScraper.git
         ```
     2. That's it - if you aren't feeling brave you can also do this manually clinking the clone button on the github page
+ ![](GIFs/git-clone.gif)
  4. Install package requirements:
     1. Change to the new LinkedInScraper directory:
     `cd LinkedInScraper`
@@ -66,7 +68,7 @@ a possible for those who have have never coded before, don't be alarmed these ac
         pip install -r requirement.txt
         ```
     3. This will install all the packages required for the scraper to run, give it a few minutes
-      
+    ![](GIFs/pip-install.gif)
  4. Finally configure the Web Scraper to the correct files and accounts:
     ```
         python configurator.py
@@ -80,18 +82,18 @@ a possible for those who have have never coded before, don't be alarmed these ac
     python scrape.py 
     ```
     - if all is successful it should fire up a chrome browser and scrape the profiles in the input file
-
+    ![](GIFs/pip-install.gif)
 
 ## Executing
 
-There are two ways you can run the code: headless execution and normal one.
+There are two ways you can run the code: normal and headless
 
-In both cases, be careful (especially when you scrap a lot of profiles) because your computer may enter sleep mode. In sleep mode the scraping could not work. For MacOS I suggest [Amphetamine](https://apps.apple.com/it/app/amphetamine/id937984704?mt=12).
+In both cases, be careful (especially when you scrape a lot of profiles), your computer may sleep or LinkedIn may throw a Captcha screen.
 
 ### Normal execution
 In this mode the script will do scraping opening a real Chrome window.
 
-**Pros:** In this case you will be able - if prompted - to satisfy the Captcha check and to proceed the scraping: the python script is trained on this situation and will perfectly manage it alerting you.
+**Pros:** In this case you will be able - if prompted - you will need to satisfy the Captcha check to continue the scrape, so you should keep and eye while it is running.
 
 **Cons:** Be aware that if you choose this mode you can not loose the focus on the window, otherwise no data will be scraped.
 
@@ -105,7 +107,7 @@ In this mode the script will do scraping without opening a real Chrome window.
 
 **Pros:** The scraping process is distributed into many threads to speed up to 4 times the performance. Moreover, in this way you can keep on doing your regular business on your computer as you don't have to keep the focus on any specific window.
 
-**Cons:** If you scrap many profiles (more than hundreds) and/or in unusual times (in the night) LinkedIn may prompt a Captcha to check that you are not a human. If this happens, there is no way for you to fill in the Captcha. The script will detect this particular situation and terminate the scraping with an alert: you will have hence to run the script in normal mode, do the captcha, and then you can proceed in scraping the profiles that were left.
+**Cons:** If LinkedIn throws a Captcha check there is no way for you to fill in the Captcha. The script will detect this particular situation and terminate the scraping with an alert: you will have hence to run the script in normal mode, do the captcha, and then you can proceed in scraping the profiles that were left.
 
 To run in headless mode:
 ```
@@ -121,7 +123,7 @@ https://www.linkedin.com/in/someoneelse/
 ```
 
 When the Chrome page closes, it means the program ended.
-You can find inside the `LinkedInScraping` folder the extracted data in the results file `scraped_data/results_profiles.xlsx`.
+You can find inside the `LinkedInScraping` folder the extracted data in the results file `Scraped/results_profiles.xlsx`.
 The file name will contain concatenated the current timestamp if the configuration was set as suggested.
 
 
