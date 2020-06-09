@@ -7,10 +7,19 @@ from Modules.utils import Profile, Location, Job, Company, Dates, Role, Educatio
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import numpy as np
 from Modules.utils import linkedin_login, is_url_valid, HumanCheckException, message_to_user, get_browser_options, \
     linkedin_logout
 
+"""
+UPDATE Wait time here:
+"""
+
+pause_time = 3
+scroll_time = 1
+
+""""""
 
 class ScrapingResult:
     def __init__(self, arg):
@@ -85,8 +94,11 @@ class ProfileScraper(Thread):
         try:
             # Setting of the delay (seconds) between operations that need to be sure loading of page is ended
             if rand:
-                loading_pause_time = np.random.randint(1, 3)
-                loading_scroll_time = np.random.randint(1, 2)
+                global pause_time
+                global scroll_time
+                
+                loading_pause_time = np.random.randint(1, pause_time)
+                loading_scroll_time = np.random.randint(1, scroll_time)
             else:
                 loading_pause_time = 2
                 loading_scroll_time = 1
