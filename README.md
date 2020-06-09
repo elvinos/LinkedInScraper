@@ -65,7 +65,7 @@ a possible for those who have have never coded before, don't be alarmed these ac
     `cd LinkedInScraper`
     2. Make sure that Web-Scraper is still the python environment you are working in then install the packages with:
         ```
-        pip install -r requirement.txt
+        pip install -r requirements.txt
         ```
     3. This will install all the packages required for the scraper to run, give it a few minutes
     ![](GIFs/pipinstall.gif)

@@ -12,15 +12,6 @@ import numpy as np
 from Modules.utils import linkedin_login, is_url_valid, HumanCheckException, message_to_user, get_browser_options, \
     linkedin_logout
 
-"""
-UPDATE Wait time here:
-"""
-
-pause_time = 3
-scroll_time = 1
-
-""""""
-
 class ScrapingResult:
     def __init__(self, arg):
         if isinstance(arg, Profile):
@@ -35,6 +26,15 @@ class ScrapingResult:
 
 
 class ProfileScraper(Thread):
+
+    """
+    UPDATE Wait time here:
+    """
+
+    pause_time = 3
+    scroll_time = 1
+
+    """"""
 
     def __init__(self, identifier, entries, config, headless_option):
 
@@ -96,7 +96,7 @@ class ProfileScraper(Thread):
             if rand:
                 global pause_time
                 global scroll_time
-                
+
                 loading_pause_time = np.random.randint(1, pause_time)
                 loading_scroll_time = np.random.randint(1, scroll_time)
             else:
