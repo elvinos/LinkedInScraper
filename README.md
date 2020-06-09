@@ -1,17 +1,17 @@
-# LinkedIn Web Scraper 
+# LinkedIn Web Scraper
 
-This program scrapes provided LinkedIn public URLs pulling: 
+This program scrapes provided LinkedIn public URLs pulling:
 - Name
 - Full Job History:
     - Company
     - Position
-    - Dates 
+    - Dates
 - Full Education History
     - Degree Type
     - Degree Subject
     - Degree Description
     - Degree Dates
-    
+
 Along with these different parameters, emails and skills have also been soft-coded which can be easily added to the
  scraper, and with a small amount of additional work the modular design of the scraper should make it fairly quick to add any other required fields.
 
@@ -26,9 +26,9 @@ You must have installed in your machine (higher versions are fine):
 
 ## Installing
 
-In order to get this software running on your local machine a few install steps are required. This is written as verbose 
+In order to get this software running on your local machine a few install steps are required. This is written as verbose
 a possible for those who have have never coded before, don't be alarmed these actually takes just a couple of minutes.
- Follow these steps to the letter and the software should work without a hitch. 
+ Follow these steps to the letter and the software should work without a hitch.
 
 1. Install python on your local machine, if you are a windows users this is best done by installing Anaconda:
     1. If on a work PC - go to the software centre and download from there, otherwise download the application from [Anaconda](https://www.anaconda.com/products/individual)
@@ -48,13 +48,13 @@ a possible for those who have have never coded before, don't be alarmed these ac
     ![](GIFs/install.gif)
 3. Lets now download the scraper:
  1. First choose a folder to place this code into - I use `Users\Alex.Charles\Documents\Development\`
- 2. To access a directory use the `cd` command i.e. `cd  Users\Alex.Charles\Documents\Development\` 
+ 2. To access a directory use the `cd` command i.e. `cd  Users\Alex.Charles\Documents\Development\`
     - Top tips:
         - `ls` to see all files in the directory
         - `cd ..` to go up one directory level
         - `cd ` then tab autocomplete and scroll through folders (type and keep hitting tab until you get to the correct one)
  3. Now we are going to download / clone the LinkedIn scraper to you local machine:
-    1. In the directory of choice type: 
+    1. In the directory of choice type:
         ```
             git clone https://github.com/elvinos/LinkedInScraper.git
         ```
@@ -74,12 +74,12 @@ a possible for those who have have never coded before, don't be alarmed these ac
         python configurator.py
     ```
     -  Follow the prompted instructions filling out thew input and output files - it is fine to change these later
-    - LinkedIn login details are kept safe on you local machine, so don'worry about security here... you can change these if you are rotating profiles
+    - LinkedIn login details are kept safe on you local machine, so don't worry about security here... you can change these if you are rotating profiles
     - *If it's the first time, set the configuration as suggested by the messages that will be printed by the configurator*
     - *Any time in the future you can easily re-run the configuration to change for example name of input / output files*
  5. Take a test run:
     ```
-    python scrape.py 
+    python scrape.py
     ```
     - if all is successful it should fire up a chrome browser and scrape the profiles in the input file
     ![](GIFs/scrape.gif)
@@ -89,6 +89,13 @@ a possible for those who have have never coded before, don't be alarmed these ac
 There are two ways you can run the code: normal and headless
 
 In both cases, be careful (especially when you scrape a lot of profiles), your computer may sleep or LinkedIn may throw a Captcha screen.
+
+**NB** Make sure that you are using Anaconda Power Shell and have activated the Web Scraping virtual env before continuing. If you have followed the installation steps to do this simply type:
+
+```
+conda activate Web-Scraping
+```
+This should then show Web Scraping on the LHS of the line in the Power Shell window
 
 ### Normal execution
 In this mode the script will do scraping opening a real Chrome window.
